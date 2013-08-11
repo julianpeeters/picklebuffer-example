@@ -38,4 +38,14 @@ object Main extends App {
     println(pickleBuffer.readByte)
 
 
+
+//Compare with output from `ShowPickled` of `scala.tools.nsc.util` compiler utils
+  val ps = new PrintStream(new File("ShowPickled.output"))
+  val duplicateBuffer = new PickleBuffer(bytes, 0, bytes.length)
+  ShowPickled.printFile(duplicateBuffer, ps)
+
+
+
+
+
 }
