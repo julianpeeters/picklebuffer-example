@@ -9,7 +9,8 @@ Please see other branches for more examples.
 
 In this example we:
 
-1) Take a simple case class and load the bytes from its Scala sig annotation into a `PickleBuffer`.
-2) Read the bytes back out of the `PickleBuffer` "manually", printing to console.
-3) Read the bytes back out of the `PickleBuffer` using `ShowPickled` from `scala.tools.nsc.util` compiler utils to interpret the output.
-4) Create an index of entries in order to inspect "deep" entries (needed because only so many entries fit in a pickle buffer at a time, and I don't know how to flush it yet).
+1) Create a `PickleBuffer` and write the header and first entry(i.e. the CLASSsym)
+
+2) Read the bytes back out of the `PickleBuffer` using `ShowPickled` from `scala.tools.nsc.util` compiler utils to interpret the output.
+
+3) To interpret the output, compare it with the output from using using `ShowPickled` on a preexisting `PickleBuffer` that we'd like to mimic.
