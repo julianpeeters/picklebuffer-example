@@ -2,14 +2,14 @@ package avocet
 package types
 import tags._
 
-object TypeRefTpe_Serializable extends Tpe {
-  var polyTpePosition = 0
+object TypeRefTpe_Double extends Tpe {
   var position = 0
+  var polyTpePosition = 0
   def write = {
     position = Position.current
     TypeRefTpe_nonGeneric(ThisTpe_scala.position, Position.current + 1).writeEntry
     ExtRef_nested(Position.current + 1, ExtModClassRef_scala.position).write
-    TypeName("Serializable").write
+    TypeName("Double").write
   }
 }
 

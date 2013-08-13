@@ -19,8 +19,8 @@ Version 5.0
 17,93: TYPEname 12: Serializable
 18,107: VALsym 8: 19(x) 0 29400200[<method> <stable> <caseaccessor> <accessor> <paramaccessor>] 20
 19,117: TERMname 1: x
-20,120: POLYtpe 1: 6
-21,123: TYPEREFtpe 2: 8 25
+20,120: POLYtpe 1: 21
+21,123: TYPEREFtpe 2: 22 25
 22,127: SINGLEtpe 2: 7 23
 23,131: EXTref 2: 24(Predef) 8
 24,135: TERMname 6: Predef
@@ -29,108 +29,123 @@ Version 5.0
 27,155: EXTMODCLASSref 2: 24(Predef) 8
 28,159: VALsym 8: 29(x ) 0 21080004[private <local> <caseaccessor> <paramaccessor>] 21
 29,169: TERMname 2: x 
-30,173: VALsym 5: 31(<init>) 0 200[<method>] 31
-31,180: TERMname 6: <init>
-32,188: METHODtpe 2: 33 35
-33,192: TYPEREFtpe 2: 34 0
-34,196: THIStpe 1: 2
-35,199: VALsym 5: 19(x) 30 2000[<param>] 21
-36,206: VALsym 7: 37(copy) 0 200200[<method> <synthetic>] 38
-37,215: TERMname 4: copy
-38,221: METHODtpe 2: 33 39
-39,225: VALsym 7: 19(x) 36 2002000[<param> <defaultparam/trait>] 21
-40,234: VALsym 7: 41(copy$default$1) 0 2200200[<method> <synthetic> <defaultparam/trait>] 42
-41,243: TERMname 14: copy$default$1
-42,259: POLYtpe 1: 43
-43,262: ANNOTATEDtpe 2: 21 44
-44,266: ANNOTINFO 1: 45
-45,269: TYPEREFtpe 2: 46 51
-46,273: THIStpe 1: 47
-47,276: EXTMODCLASSref 2: 48(unchecked) 49
-48,280: TERMname 9: unchecked
-49,291: EXTMODCLASSref 2: 50(annotation) 8
-50,295: TERMname 10: annotation
-51,307: EXTref 2: 52(uncheckedVariance) 47
-52,311: TYPEname 17: uncheckedVariance
-53,330: VALsym 7: 54(ProductPrefix) 0 200220[<method> override <synthetic>] 55
-54,339: TERMname 13: ProductPrefix
-55,354: POLYtpe 1: 56
-56,357: TYPEREFtpe 2: 57 62
-57,361: THIStpe 1: 58
-58,364: EXTMODCLASSref 2: 59(lang) 60
-59,368: TERMname 4: lang
-60,374: EXTMODCLASSref 1: 61(java)
-61,377: TERMname 4: java
-62,383: EXTref 2: 26(String) 58
-63,387: VALsym 7: 64(ProductArity) 0 200200[<method> <synthetic>] 65
-64,396: TERMname 12: ProductArity
-65,410: POLYtpe 1: 66
-66,413: TYPEREFtpe 2: 7 67
-67,417: EXTref 2: 68(Int) 8
-68,421: TYPEname 3: Int
-69,426: VALsym 7: 70(ProductElement) 0 200200[<method> <synthetic>] 71
-70,435: TERMname 14: ProductElement
-71,451: POLYtpe 1: 72
-72,454: TYPEREFtpe 2: 7 73
-73,458: EXTref 2: 74(Any) 8
-74,462: TYPEname 3: Any
-75,467: VALsym 7: 76(x$1) 0 202000[<param> <synthetic>] 66
-76,476: TERMname 3: x$1
-77,481: VALsym 7: 78(ProductIterator) 0 200220[<method> override <synthetic>] 79
-78,490: TERMname 15: ProductIterator
-79,507: POLYtpe 1: 80
-80,510: TYPEREFtpe 3: 81 84 72
-81,515: THIStpe 1: 82
-82,518: EXTMODCLASSref 2: 83(collection) 8
-83,522: TERMname 10: collection
-84,534: EXTref 2: 85(Iterator) 82
-85,538: TYPEname 8: Iterator
-86,548: VALsym 7: 87(CanEqual) 0 200200[<method> <synthetic>] 88
-87,557: TERMname 8: CanEqual
-88,567: METHODtpe 2: 89 92
-89,571: TYPEREFtpe 2: 7 90
-90,575: EXTref 2: 91(Boolean) 8
-91,579: TYPEname 7: Boolean
-92,588: VALsym 7: 76(x$1) 0 202000[<param> <synthetic>] 72
-93,597: VALsym 7: 94(HashCode) 0 200220[<method> override <synthetic>] 95
-94,606: TERMname 8: HashCode
-95,616: METHODtpe 1: 66
-96,619: VALsym 7: 97(ToString) 0 200220[<method> override <synthetic>] 98
-97,628: TERMname 8: ToString
-98,638: METHODtpe 1: 56
-99,641: VALsym 7: 100(Equals) 0 200220[<method> override <synthetic>] 101
-100,650: TERMname 6: Equals
-101,658: METHODtpe 1: 56
-102,661: VALsym 7: 76(x$1) 0 202000[<param> <synthetic>] 72
-103,670: MODULEsym 7: 104(MyRecord) 2 200400[<module> <synthetic>] 105
-104,679: TERMname 8: MyRecord
-105,689: TYPEREFtpe 2: 34 106
-106,693: CLASSsym 7: 1(MyRecord) 2 200400[<module> <synthetic>] 107
-107,702: CLASSINFOtpe 3: 106 108 15
-108,707: TYPEREFtpe 4: 109 112 33 21
-109,713: THIStpe 1: 110
-110,716: EXTMODCLASSref 2: 111(runtime) 8
-111,720: TERMname 7: runtime
-112,729: EXTref 2: 113(AbstractFunction1) 110
-113,733: TYPEname 17: AbstractFunction1
-114,752: VALsym 5: 0(MyRecord) 106 200[<method>] 115
-115,759: METHODtpe 1: 105
-116,762: VALsym 5: 97(ToString) 106 222[<method> final override] 98
-117,769: VALsym 7: 118(Apply) 106 200240[<method> case <synthetic>] 119
-118,778: TERMname 5: Apply
-119,785: METHODtpe 2: 0 120
-120,789: VALsym 5: 19(x) 117 2000[<param>] 21
-121,796: VALsym 7: 122(Unapply) 106 200240[<method> case <synthetic>] 123
-122,805: TERMname 7: Unapply
-123,814: METHODtpe 2: 124 127
-124,818: TYPEREFtpe 3: 7 125 21
-125,823: EXTref 2: 126(Option) 8
-126,827: TYPEname 6: Option
-127,835: VALsym 6: 128(x$0) 121 2000[<param>] 0
-128,843: TERMname 3: x$0
-129,848: VALsym 9: 130(ReadResolve) 106 200204[<method> private <synthetic>] 131
-130,859: TERMname 11: ReadResolve
-131,872: METHODtpe 2: 132
-132,876: TYPEREFtpe 3: 57 133
-133,881: EXTref 3: 134(Object) 58
-134,886: TYPEname 6: Object
+30,173: VALsym 8: 31(y) 0 29400200[<method> <stable> <caseaccessor> <accessor> <paramaccessor>] 32
+31,183: TERMname 1: y
+32,186: POLYtpe 1: 6
+33,189: VALsym 8: 34(y ) 0 21080004[private <local> <caseaccessor> <paramaccessor>] 6
+34,199: TERMname 2: y 
+35,203: VALsym 5: 36(<init>) 0 200[<method>] 37
+36,210: TERMname 6: <init>
+37,218: METHODtpe 3: 38 40 41
+38,223: TYPEREFtpe 2: 39 0
+39,227: THIStpe 1: 2
+40,230: VALsym 5: 19(x) 30 2000[<param>] 21
+41,237: VALsym 5: 31(y) 30 2000[<param>] 6
+42,244: VALsym 7: 43(copy) 0 200200[<method> <synthetic>] 44
+43,253: TERMname 4: copy
+44,259: METHODtpe 2: 38 45
+45,263: VALsym 7: 19(x) 42 2002000[<param> <defaultparam/trait>] 21
+46,272: VALsym 7: 31(y) 42 2002000[<param> <defaultparam/trait>] 6
+47,281: VALsym 7: 48(copy$default$1) 0 2200200[<method> <synthetic> <defaultparam/trait>] 49
+48,290: TERMname 14: copy$default$1
+49,306: POLYtpe 1: 50
+50,309: ANNOTATEDtpe 2: 21 51
+51,313: ANNOTINFO 1: 52
+52,316: TYPEREFtpe 2: 53 58
+53,320: THIStpe 1: 54
+54,323: EXTMODCLASSref 2: 55(unchecked) 56
+55,327: TERMname 9: unchecked
+56,338: EXTMODCLASSref 2: 57(annotation) 8
+57,342: TERMname 10: annotation
+58,354: EXTref 2: 59(uncheckedVariance) 54
+59,358: TYPEname 17: uncheckedVariance
+60,377: VALsym 7: 61(copy$default$2) 0 2200200[<method> <synthetic> <defaultparam/trait>] 62
+61,386: TERMname 14: copy$default$2
+62,402: POLYtpe 1: 63
+63,405: ANNOTATEDtpe 2: 6 51
+64,409: VALsym 7: 65(ProductPrefix) 0 200220[<method> override <synthetic>] 66
+65,418: TERMname 13: ProductPrefix
+66,433: POLYtpe 1: 67
+67,436: TYPEREFtpe 2: 68 73
+68,440: THIStpe 1: 69
+69,443: EXTMODCLASSref 2: 70(lang) 71
+70,447: TERMname 4: lang
+71,453: EXTMODCLASSref 1: 72(java)
+72,456: TERMname 4: java
+73,462: EXTref 2: 26(String) 69
+74,466: VALsym 7: 75(ProductArity) 0 200200[<method> <synthetic>] 76
+75,475: TERMname 12: ProductArity
+76,489: POLYtpe 1: 77
+77,492: TYPEREFtpe 2: 7 78
+78,496: EXTref 2: 79(Int) 8
+79,500: TYPEname 3: Int
+80,505: VALsym 7: 81(ProductElement) 0 200200[<method> <synthetic>] 82
+81,514: TERMname 14: ProductElement
+82,530: POLYtpe 1: 83
+83,533: TYPEREFtpe 2: 7 84
+84,537: EXTref 2: 85(Any) 8
+85,541: TYPEname 3: Any
+86,546: VALsym 7: 87(x$1) 0 202000[<param> <synthetic>] 77
+87,555: TERMname 3: x$1
+88,560: VALsym 7: 89(ProductIterator) 0 200220[<method> override <synthetic>] 90
+89,569: TERMname 15: ProductIterator
+90,586: POLYtpe 1: 91
+91,589: TYPEREFtpe 3: 92 95 83
+92,594: THIStpe 1: 93
+93,597: EXTMODCLASSref 2: 94(collection) 8
+94,601: TERMname 10: collection
+95,613: EXTref 2: 96(Iterator) 93
+96,617: TYPEname 8: Iterator
+97,627: VALsym 7: 98(CanEqual) 0 200200[<method> <synthetic>] 99
+98,636: TERMname 8: CanEqual
+99,646: METHODtpe 2: 100 103
+100,650: TYPEREFtpe 2: 7 101
+101,654: EXTref 2: 102(Boolean) 8
+102,658: TYPEname 7: Boolean
+103,667: VALsym 7: 87(x$1) 0 202000[<param> <synthetic>] 83
+104,676: VALsym 7: 105(HashCode) 0 200220[<method> override <synthetic>] 106
+105,685: TERMname 8: HashCode
+106,695: METHODtpe 1: 77
+107,698: VALsym 7: 108(ToString) 0 200220[<method> override <synthetic>] 109
+108,707: TERMname 8: ToString
+109,717: METHODtpe 1: 67
+110,720: VALsym 7: 111(Equals) 0 200220[<method> override <synthetic>] 112
+111,729: TERMname 6: Equals
+112,737: METHODtpe 1: 67
+113,740: VALsym 7: 87(x$1) 0 202000[<param> <synthetic>] 83
+114,749: MODULEsym 7: 115(MyRecord) 2 200400[<module> <synthetic>] 116
+115,758: TERMname 8: MyRecord
+116,768: TYPEREFtpe 2: 39 117
+117,772: CLASSsym 7: 1(MyRecord) 2 200400[<module> <synthetic>] 118
+118,781: CLASSINFOtpe 3: 117 119 15
+119,786: TYPEREFtpe 5: 120 123 38 21 6
+120,793: THIStpe 1: 121
+121,796: EXTMODCLASSref 2: 122(runtime) 8
+122,800: TERMname 7: runtime
+123,809: EXTref 2: 124(AbstractFunction2) 121
+124,813: TYPEname 17: AbstractFunction2
+125,832: VALsym 5: 0(MyRecord) 117 200[<method>] 126
+126,839: METHODtpe 1: 116
+127,842: VALsym 5: 108(ToString) 117 222[<method> final override] 109
+128,849: VALsym 9: 129(Apply) 117 200240[<method> case <synthetic>] 130
+129,860: TERMname 5: Apply
+130,867: METHODtpe 5: 38 131 132
+131,874: VALsym 6: 19(x) 128 2000[<param>] 21
+132,882: VALsym 6: 31(y) 128 2000[<param>] 6
+133,890: VALsym 9: 134(Unapply) 117 200240[<method> case <synthetic>] 135
+134,901: TERMname 7: Unapply
+135,910: METHODtpe 4: 136 139
+136,916: TYPEREFtpe 5: 7 137 139
+137,923: EXTref 3: 138(Option) 8
+138,928: TYPEname 6: Option
+139,936: TYPEREFtpe 5: 8 140 21 6
+140,943: EXTref 3: 141(Tuple2) 8
+141,948: TYPEname 6: Tuple2
+142,956: VALsym 7: 143(x$0) 133 2000[<param>] 38
+143,965: TERMname 3: x$0
+144,970: VALsym 9: 145(ReadResolve) 117 200204[<method> private <synthetic>] 146
+145,981: TERMname 11: ReadResolve
+146,994: METHODtpe 2: 147
+147,998: TYPEREFtpe 3: 68 148
+148,1003: EXTref 3: 149(Object) 69
+149,1008: TYPEname 6: Object

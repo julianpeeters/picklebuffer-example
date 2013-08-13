@@ -4,6 +4,7 @@ import tags._
 
 object TypeRefTpe_Iterator extends Tpe{
   var position = 0
+  var polyTpePosition = 0
   def write = {
   position = Position.current
 

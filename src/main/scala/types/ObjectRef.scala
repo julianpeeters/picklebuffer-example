@@ -4,6 +4,7 @@ import tags._
 
 object TypeRefTpe_Object extends Tpe {
   var position = 0
+  var polyTpePosition = 0
   def write = {
     position = Position.current
     TypeRefTpe_nonGeneric(ThisTpe_scala.position + 1, Position.current + 6).writeEntry
@@ -18,6 +19,7 @@ object TypeRefTpe_Object extends Tpe {
 }
 object TypeRefTpe_ObjectReadResolve extends Tpe {
   var position = 0
+  var polyTpePosition = 0
   def write = {
     position = Position.current
     TypeRefTpe_nonGeneric(ThisTpe_javaLang.position, Position.current + 1).writeEntry

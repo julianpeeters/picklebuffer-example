@@ -3,6 +3,7 @@ package types
 import tags._
 
 object TypeRefTpe_Short extends Tpe{
+  var polyTpePosition = 0
   var position = 0
   def write = {
     position = Position.current

@@ -9,8 +9,6 @@ Please see other branches for more examples.
 
 In this example we:
 
-1) Create a `PickleBuffer` and write the header and first entry(i.e. the CLASSsym)
+1) Create a `PickleBuffer` and write arbitrary Scala Signatures for "simple" case classes, i.e. only basic datatypes. (TODO: collections, user-defined datatypes (i.e. other case classes as datatypes), user-defined methods?)
 
-2) Read the bytes back out of the `PickleBuffer` using `ShowPickled` from `scala.tools.nsc.util` compiler utils to interpret the output.
-
-3) To interpret the output, compare it with the output from using using `ShowPickled` on a preexisting `PickleBuffer` that we'd like to mimic.
+2) Read the bytes back out of the `PickleBuffer` using `ShowPickled` from `scala.tools.nsc.util` compiler utils to verify output.

@@ -8,7 +8,7 @@ import types._
 
 object ReadResolve {
   val valSymPosition = Position.current
-  ValSym(9, Position.current + 1, ClassSym_Module.position, 2097668L, Position.current + 2).write
+  ValSym(7, Position.current + 1, ClassSym_Module.position, 2097668L, Position.current + 2).write
   TermName("ReadResolve").write
 
   TypeRefTpe_Object.position match {

@@ -39,11 +39,26 @@ case class TypeRefTpe_function(runtimeRef: Int, abstractFunctionRef: Int, member
   //len
     PB.myBuf.writeNat(3 + memberTypeRefs.length + args.filter(arg => arg > 127).length)
   //data {
-      args.foreach(arg => if (arg > 127) PB.myBuf.writeLongNat(arg); else PB.myBuf.writeNat(arg))
+      args.foreach(arg => PB.myBuf.writeNat(arg))
+  //}
+      Position.current += 1
+  }
+}
+
+case class TypeRefTpe_tuple(scalaThisTpeRef: Int, tupleExtRefRef: Int, memberTypeRefs: List[Int]) {
+  val args = scalaThisTpeRef :: tupleExtRefRef :: memberTypeRefs
+  def writeEntry = {
+  //tag
+    PB.myBuf.writeByte(16)
+  //len
+    PB.myBuf.writeNat(2 + memberTypeRefs.length + args.filter(arg => arg > 127).length)
+  //data {
+      args.foreach(arg => PB.myBuf.writeNat(arg))
   //}
       Position.current += 1
   }
 } 
+ 
 
 case class TypeRefTpe_unapplyOption(scalaRef: Int, optionExtRef: Int, tupledValueMembersRef: Int) {
   val args = List(scalaRef, optionExtRef, tupledValueMembersRef)
