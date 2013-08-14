@@ -1,11 +1,14 @@
 package avocet
+import scala.reflect.internal.pickling._
+import PickleFormat._
+
 
 object SigHeader {
 
 //write version
   //Version
-    HB.headerBuffer.writeNat(5)//major
-    HB.headerBuffer.writeNat(0)//minor
+    HB.headerBuffer.writeNat(PickleFormat.MajorVersion)
+    HB.headerBuffer.writeNat(PickleFormat.MinorVersion)
 
 //write # of entries
     HB.headerBuffer.writeNat(Position.current)
