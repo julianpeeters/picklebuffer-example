@@ -9,35 +9,74 @@ import java.io.{PrintStream, File}
 
 object Main extends App {
 
-//write entries
+  val bytes: Array[Byte] = {
+    val scalaSigAnnot = classOf[MyRecord_Int].getAnnotation(classOf[scala.reflect.ScalaSignature])
+    val encodedBytes  = scalaSigAnnot.bytes.getBytes
+    val len           = ByteCodecs.decode(encodedBytes)
 
-  ClassInfo
-  val valueMembers = List(ValueMember("x", "String"), ValueMember("y", "AnyRef"))//write value member entries
-  val init = Init(valueMembers) 
-  init.write
-  Copy(valueMembers)
-  CopyDefault(valueMembers)
-  ProductPrefix
-  ProductArity
-  ProductElement
-  ProductIterator
-  CanEqual
-  HashCode
-  ToString
-  Equals
-  
-  ModuleInfo(valueMembers)
-  Init_Module(init)
-  ToString_Module(valueMembers)
-  Apply(valueMembers, init)
-  Unapply(valueMembers, init)
-  ReadResolve
+    Arrays.copyOf(encodedBytes, len)
+  }
+  val pickleBuffer = new PickleBuffer(bytes, 0, bytes.length)
+  val p = new PrintStream(new File("output/ShowPickled.MyRecord_Int"))
+  ShowPickled.printFile(pickleBuffer, p)
 
 
-  val myPickleBuffer = new PickleBuffer(ScalaSig.bytes, 0, ScalaSig.bytes.length)
 
+
+  //val mySig = new ScalaSig(List("models", "MyRecord"), List(("x", "String")))
+
+ // val mySig = new ScalaSig(List("models", "MyRecord_Byte"), List(("a", "Byte")))
+ // val mySig = new ScalaSig(List("models", "MyRecord_Short"), List(("b", "Short")))
+  val mySig = new ScalaSig(List("models", "MyRecord_Int"), List(("c", "Int")))
+ // val mySig = new ScalaSig(List("models", "MyRecord_Long"), List(("d", "Long")))
+ // val mySig = new ScalaSig(List("models", "MyRecord_Byte"), List(("a", "Byte")))
+ // val mySig = new ScalaSig(List("models", "MyRecord_Byte"), List(("a", "Byte")))
+ // val mySig = new ScalaSig(List("models", "MyRecord_Byte"), List(("a", "Byte")))
+ // val mySig = new ScalaSig(List("models", "MyRecord_Byte"), List(("a", "Byte")))
+ // val mySig = new ScalaSig(List("models", "MyRecord_Byte"), List(("a", "Byte")))
+ // val mySig = new ScalaSig(List("models", "MyRecord_Byte"), List(("a", "Byte")))
+ // val mySig = new ScalaSig(List("models", "MyRecord_Byte"), List(("a", "Byte")))
+ // val mySig = new ScalaSig(List("models", "MyRecord_Byte"), List(("a", "Byte")))
+ // val mySig = new ScalaSig(List("models", "MyRecord_Byte"), List(("a", "Byte")))
+/*
+  val mySig = new ScalaSig(List("models", "MyRecord"), List(
+    ("a", "Byte"),
+    ("b", "Short"),
+    ("c", "Int"),
+    ("d", "Long"),
+    ("e", "Float"),
+    ("f", "Double"),
+    ("g", "Char"),
+    ("h", "String"),
+    ("i", "Boolean"),
+    ("j", "Unit"),
+    ("k", "Null"),    
+    ("l", "Nothing"),
+    ("m", "Any"),
+    ("n", "AnyRef")                 
+  ))
+*/
+  val myPickleBuffer = new PickleBuffer(mySig.bytes, 0, mySig.bytes.length)
   val ps = new PrintStream(new File("output/ShowPickled.myPickleBuffer"))
+
   ShowPickled.printFile(myPickleBuffer, ps)
+
+
+
+
+/*
+ val duplicateBuffer = new PickleBuffer(bytes, 0, bytes.length)
+  val index: Array[Int] = {
+    val i = duplicateBuffer.createIndex
+    duplicateBuffer.readIndex = 0
+    i
+  }
+  val entryNumber = 129//an arbitrary entry to inspect
+  val entryBuffer = new PickleBuffer(duplicateBuffer.toIndexedSeq(entryNumber)._2, 0, duplicateBuffer.toIndexedSeq(entryNumber)._2.length)
+  entryBuffer.readNat
+  entryBuffer.readNat
+  println("flag: " + entryBuffer.readLongNat)
+*/
 
 }
 

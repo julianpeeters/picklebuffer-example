@@ -10,8 +10,9 @@ case class Unapply(valueMembers: List[ValueMember], init: Init) {
   val valSymPosition = Position.current
   val valueMemberTypeRefPositions = valueMembers.map(vm => vm.typeRefPosition)
 
-  ValSym(7, Position.current + 1, ClassSym_Module.position, 2097728L, Position.current + 2).write
-  TermName("Unapply").write
+//  ValSym(7, Position.current + 1, ClassSym_Module.position, 2097728L, Position.current + 2).write
+  ValSym(Position.current + 1, ClassSym_Module.position, 2097728L, Position.current + 2).write
+  TermName("unapply").write
   
   valueMembers.length match {
     case 1          => {  // if there is only 1 value member, have the option typereftpe ref the value member
@@ -48,7 +49,8 @@ case class Unapply(valueMembers: List[ValueMember], init: Init) {
   }
 
 
-  ValSym(5, Position.current + 1, valSymPosition, 8192L, init.typeRefTpePosition).write
+//  ValSym(7, Position.current + 1, valSymPosition, 2105344L, init.typeRefTpePosition).write
+  ValSym(Position.current + 1, valSymPosition, 2105344L, init.typeRefTpePosition).write
   TermName("x$0").write
 
 }

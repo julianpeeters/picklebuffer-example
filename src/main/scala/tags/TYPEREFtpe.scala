@@ -31,15 +31,20 @@ case class TypeRefTpe_generic(ownerRef: Int, ExtRef: Int, boxedTypeRef: Int) {
   }
 }
  
-case class TypeRefTpe_function(runtimeRef: Int, abstractFunctionRef: Int, memberTypeRefs: List[Int], modelMyRecordRef: Int) {
-  val args = runtimeRef :: abstractFunctionRef :: modelMyRecordRef :: memberTypeRefs
+case class TypeRefTpe_function(runtimeRef: Int, abstractFunctionExtRef: Int, memberTypeRefs: List[Int], modelMyRecordRef: Int) {
+  val args = runtimeRef :: abstractFunctionExtRef :: modelMyRecordRef :: memberTypeRefs
   def writeEntry = {
   //tag
     PB.myBuf.writeByte(16)
   //len
     PB.myBuf.writeNat(3 + memberTypeRefs.length + args.filter(arg => arg > 127).length)
   //data {
-      args.foreach(arg => PB.myBuf.writeNat(arg))
+    //
+      PB.myBuf.writeNat(runtimeRef)
+    //
+      PB.myBuf.writeNat(abstractFunctionExtRef)
+      memberTypeRefs.foreach(i => PB.myBuf.writeNat(i))
+      PB.myBuf.writeNat(modelMyRecordRef)
   //}
       Position.current += 1
   }

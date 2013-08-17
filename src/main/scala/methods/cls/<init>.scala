@@ -6,10 +6,14 @@ import tags._
 import types._
 
 case class Init(valueMembers: List[ValueMember]) {
+  var valSymPosition = 0
   var termNamePosition = 0
   val typeRefTpePosition = Position.current + 3
   def write  = {
-    ValSym(5, Position.current + 1, ClassSym.position, 512L, Position.current + 2).write
+    valSymPosition = Position.current
+//    ValSym(5, Position.current + 1, ClassSym.position, 512L, Position.current + 2).write
+    ValSym(Position.current + 1, ClassSym.position, 512L, Position.current + 2).write
+    termNamePosition = Position.current
     TermName("<init>").write
     
   
@@ -25,10 +29,8 @@ case class Init(valueMembers: List[ValueMember]) {
           }
         }
       
-      valueMembers.foreach(vm => ValSym(5, vm.termNamePosition, 30, 8192L, vm.typeRefPosition).write)
-      
+//      valueMembers.foreach(vm => ValSym(5, vm.termNamePosition, valSymPosition, 8192L, vm.typeRefPosition).write)
+      valueMembers.foreach(vm => ValSym(vm.termNamePosition, valSymPosition, 8192L, vm.typeRefPosition).write)
 
-      
-    
   }
 }

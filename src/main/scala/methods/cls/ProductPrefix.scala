@@ -7,8 +7,9 @@ import types._
 
 object ProductPrefix {
   val valSymPosition = Position.current
-  ValSym(7, Position.current + 1, ClassSym.position, 2097696L, Position.current + 2).write
-  TermName("ProductPrefix").write
+//  ValSym(7, Position.current + 1, ClassSym.position, 2097696L, Position.current + 2).write
+  ValSym(Position.current + 1, ClassSym.position, 2097696L, Position.current + 2).write
+  TermName("productPrefix").write
   PolyTpe(TypeRefTpe_javaLangString).write
   TypeRefTpe_javaLangString.write
   ThisTpe_javaLang.write

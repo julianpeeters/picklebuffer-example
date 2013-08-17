@@ -7,6 +7,7 @@ import cls._
 
 case class ToString_Module(valueMembers: List[ValueMember]) {
   val position = Position.current
-    ValSym(5, ToString.termNamePosition, ClassSym_Module.position, 546L, ToString.MethodTpePositition).write
+//    ValSym(7, ToString.termNamePosition, ClassSym_Module.position, 2097698L, ToString.MethodTpePositition).write
+    ValSym(ToString.termNamePosition, ClassSym_Module.position, 2097698L, ToString.MethodTpePositition).write
    
 }

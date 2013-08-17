@@ -11,7 +11,8 @@ case class ValueMember(termName: String, typeName: String) {
     typeRef.position match { //polytpe position is determined by TypeRef position (all types but AnyRef follow a polytpe)
       case 0      => { //if it doesn't exist, write it next
         polyTpePosition = Position.current + 2
-        ValSym(8, Position.current + 1, ClassSym.position, 692060672L, polyTpePosition).write
+//        ValSym(8, Position.current + 1, ClassSym.position, 692060672L, polyTpePosition).write
+        ValSym(Position.current + 1, ClassSym.position, 692060672L, polyTpePosition).write
         termNamePosition = Position.current
         TermName(termName).write
         PolyTpe(typeRef).write
@@ -21,7 +22,8 @@ case class ValueMember(termName: String, typeName: String) {
       case 6      => {//AnyRef gets special treatement, since it the only type defined before all other value member types
         polyTpePosition = Position.current + 2
         typeRefPosition = typeRef.position
-        ValSym(8, Position.current + 1, ClassSym.position, 692060672L, polyTpePosition).write
+        ValSym(Position.current + 1, ClassSym.position, 692060672L, polyTpePosition).write
+//        ValSym(8, Position.current + 1, ClassSym.position, 692060672L, polyTpePosition).write
         termNamePosition = Position.current
         TermName(termName).write
         PolyTpe(typeRef).write
@@ -29,7 +31,8 @@ case class ValueMember(termName: String, typeName: String) {
       case i: Int => {//if the type has been previously 
         polyTpePosition = typeRef.position - 1
         typeRefPosition = typeRef.position
-        ValSym(8, Position.current + 1, ClassSym.position, 692060672L, polyTpePosition).write
+        ValSym(Position.current + 1, ClassSym.position, 692060672L, polyTpePosition).write
+//        ValSym(8, Position.current + 1, ClassSym.position, 692060672L, polyTpePosition).write
         termNamePosition = Position.current
         TermName(termName).write
       }
@@ -59,6 +62,7 @@ case class ValueMember(termName: String, typeName: String) {
     case "Stream" => writeTpe(TypeRefTpe_Stream) 
   }
 
-  ValSym(8, Position.current + 1, ClassSym.position, 554172420L, typeRefPosition).write
+ // ValSym(8, Position.current + 1, ClassSym.position, 554172420L, typeRefPosition).write
+  ValSym(Position.current + 1, ClassSym.position, 554172420L, typeRefPosition).write
   TermName(termName + " ").write
 }
